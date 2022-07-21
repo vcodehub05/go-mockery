@@ -29,5 +29,10 @@ func (r Repo) GetUser() ([]model.User, error) {
 		users = append(users, user)
 	}
 
+	if len(users) == 0 {
+		err := fmt.Errorf("Empty")
+		return nil, err
+	}
+
 	return users, nil
 }

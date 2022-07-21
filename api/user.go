@@ -57,7 +57,8 @@ func (res resource) GetAllUser(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		fmt.Printf("Unable to get all user %v", err)
-		json.NewEncoder(w).Encode(err)
+		w.WriteHeader(http.StatusBadRequest)
+		return
 	}
 
 	json.NewEncoder(w).Encode(users)

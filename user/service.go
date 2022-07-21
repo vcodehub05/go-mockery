@@ -22,15 +22,15 @@ func (s Service) InsertUser(user1 *model.User) error {
 	if err != nil {
 		return err
 	}
-	
+
 	return nil
 }
 
 func (s Service) GetUser() ([]model.User, error) {
-	
+
 	userList, err := s.repo.GetUser()
 	if err != nil {
-		return nil, fmt.Errorf("failed to list users: %w ", err)
+		return nil, fmt.Errorf("failed to list users:  ")
 	}
 
 	return userList, nil
